@@ -22,10 +22,8 @@ namespace EscapeFromLabyrinth
             if (topScores[0] == null && topScores[1] == null && topScores[2] == null && topScores[3] == null && topScores[4] == null)
             {
 
-
-
                 Console.WriteLine("The scoreboard is empty.");
             }
-        }//end ShowTopScores method
+        }
     }
 }

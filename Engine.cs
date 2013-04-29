@@ -7,174 +7,143 @@ namespace EscapeFromLabyrinth
 {
     public class Engine
     {
-        LabyrinthBoard ll = new LabyrinthBoard();
-        private string enterMove = "Enter your move (L=left, R=right, U=up, D=down):";
-        private string welcome = "Welcome to “Labirinth” game. Please try to escape. Use 'top' to view the top scoreboard, 'restart' to start a new game and 'exit' to quit the game.";
-        private int i = 0, j = 0, m = 3, n = 3;
+        LabyrinthBoard labyrinth = new LabyrinthBoard();
         private TopScores topScores = new TopScores();
-
-
-        private bool _continue = true;
-
-
+        private bool flagContinue = true;
+        private string enterMove = "\nEnter your move (L=left, R=right, U=up, D=down):";
+        private string welcome = "Welcome to “Labirinth” game. Your goal is to escape. \nUse 'top' to view the top scoreboard, \n'restart' to start a new game \nand 'exit' to quit the game.\n";       
+ 
         public void Start()
         {
             Console.WriteLine(welcome);
-            Console.Write(ll.ToString());
+            Console.Write(labyrinth.ToString());
             Move();
         }
 
+        public void Restart()
+        {
+            flagContinue = true;
+            labyrinth.InitializeLabyrinth();
+            Console.WriteLine("\n" + welcome);
+            Console.WriteLine(enterMove);
+            Console.Write(labyrinth.ToString());
+            Move();
+        }
        
         public void Move()
         {
             int steps = 0;
 
-            while (_continue == true)
+            while (flagContinue == true)
             {
                 Console.Write(enterMove);
                 string input = Console.ReadLine();
 
-                if (input.Length > 1 || input.Length == 0)
+                if (input.Length == 1)
                 {
-                    switch (input)
-                    {
-                        case "exit":
-                            Console.WriteLine("Good Bye!");
-                            _continue = false;
-                            break;
-                        case "restart":
-                            ll.InitializeLabyrinth();
-                            Console.Write(ll.ToString());
-                            _continue = true;
-                            m = 3;
-                            n = 3;
-                            Move();
-                            break;
-                        case "top":
-                            topScores.ShowTopScores();
-                            _continue = true;
-                            break;
-                        default:
-                            Console.WriteLine("Invalid command");
-                            _continue = true;
-                            break;
-                    }//end switch
-                }//end if
+                    ProcessInputDirection(input, steps); 
+                }
                 else
                 {
+                    ProcessInputCommand(input);
+                }
+            }
+        }
 
-                    switch (input)
+        public void ProcessInputDirection(string input, int steps)
+        {
+            switch (input)
+            {
+                case "L":
+                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow, labyrinth.PiecePositionCol - 1))
                     {
-                        case "L":
-                            if (ll.IsPossibleCell(ll.PiecePositionRow, ll.PiecePositionCol-1))
-                            {
-                                ll.MovePieceLeft();
-                                steps++;
-                                if (ll.IsPieceOnEdge())
-                                {
-                                    Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
-                                    ll.InitializeLabyrinth();
-                                    Console.WriteLine("\n" + welcome);
-                                    Console.WriteLine(enterMove);
-                                    Console.Write(ll.ToString());
-                                    Move();
-                                }
-                                else
-                                {
-                                    Console.Write(ll.ToString());
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid move!");
-                            }
-                            break;
-                        case "R":
-                            if (ll.IsPossibleCell(ll.PiecePositionRow, ll.PiecePositionCol + 1))
-                            {
-                                ll.MovePieceRight();
-                                steps++;
-                                if (ll.IsPieceOnEdge())
-                                {
-                                    Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
-                                    ll.InitializeLabyrinth();
+                        labyrinth.MovePieceLeft();
+                        steps++;
+                        WalkInLabirinth(steps);
+                    }
+                    else
+                    {
+                        Console.WriteLine("It is not possible to move left!");
+                    }
+                    break;
+                case "R":
+                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow, labyrinth.PiecePositionCol + 1))
+                    {
+                        labyrinth.MovePieceRight();
+                        steps++;
+                        WalkInLabirinth(steps);
+                    }
+                    else
+                    {
+                        Console.WriteLine("It is not possible to move right!");
+                    }
+                    break;
+                case "U":
+                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow - 1, labyrinth.PiecePositionCol))
+                    {
+                        labyrinth.MovePieceUp();
+                        steps++;
+                        WalkInLabirinth(steps);
+                    }
+                    else
+                    {
+                        Console.WriteLine("It is not possible to move up!");
+                    }
 
+                    break;
+                case "D":
+                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow + 1, labyrinth.PiecePositionCol))
+                    {
+                        labyrinth.MovePieceDown();
+                        steps++;
+                        WalkInLabirinth(steps);
+                    }
+                    else
+                    {
+                        Console.WriteLine("It is not possible to move down!");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Invalid command to move");
+                    break;
+            }
+        }
 
+        private void WalkInLabirinth(int steps)
+        {   
+            if (labyrinth.IsPieceOnEdge())
+            {
+                Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
+                Restart();
+            }
+            else
+            {
+                Console.Write(labyrinth.ToString());
+            }
+        }
 
-                                    Console.WriteLine("\n" + welcome);
-                                    Console.WriteLine(enterMove);
-                                    Console.Write(ll.ToString());
-                                    Move();
-                                }
-                                else
-                                {
-                                    Console.Write(ll.ToString());
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid move!");
-                            }
-                            break;
-                        case "U":
-                            if (ll.IsPossibleCell(ll.PiecePositionRow - 1, ll.PiecePositionCol))
-                            {
-                                ll.MovePieceUp();
-
-
-
-                                steps++;
-                                if (ll.IsPieceOnEdge())
-                                {
-                                    Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
-                                    ll.InitializeLabyrinth();
-                                    Console.WriteLine("\n" + welcome);
-                                    Console.WriteLine(enterMove);
-                                    Console.Write(ll.ToString());
-                                    Move();
-                                }
-                                else
-                                {
-                                    Console.Write(ll.ToString());
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid move!");
-                            }
-                            break;
-                        case "D":
-                            if (ll.IsPossibleCell(ll.PiecePositionRow + 1, ll.PiecePositionCol))
-                            {
-                                ll.MovePieceDown();
-                                steps++;
-                                if (ll.IsPieceOnEdge())
-                                {
-                                    Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
-                                    ll.InitializeLabyrinth();
-                                    Console.WriteLine("\n" + welcome);
-                                    Console.WriteLine(enterMove);
-                                    Console.Write(ll.ToString());
-                                    Move();
-                                }
-                                else
-                                {
-                                    Console.Write(ll.ToString());
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid move!");
-                            }
-                            break;
-                        default:
-                            Console.WriteLine("Invalid move");
-                            break;
-                    }//end switch
-                }//end else
-            }//end while
-        }//end Move method
-    }//end class Labyrinth
+        public void ProcessInputCommand(string input)
+        {
+            switch (input)
+            {
+                case "exit":
+                    Console.WriteLine("Good Bye!");
+                    flagContinue = false;
+                    break;
+                case "restart":
+                    Restart();
+                    break;
+                case "top":
+                    topScores.ShowTopScores();
+                    flagContinue = true;
+                    break;
+                default:
+                    Console.WriteLine("Invalid command");
+                    flagContinue = true;
+                    break;
+            }
+        }
+    }
 }
 
 

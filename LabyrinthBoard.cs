@@ -7,11 +7,12 @@ namespace EscapeFromLabyrinth
 {
     class LabyrinthBoard
     {
-        const int LabyrinthSize = 7;
+        const int LABYRINTHSIZE = 7;
+        const int PIECEPOSITION = 3;
 
-        private int[,] ll = new int[LabyrinthSize, LabyrinthSize];
-        private int piecePositionRow = 3;
-        private int piecePositionCol = 3;
+        private int[,] labyrinth = new int[LABYRINTHSIZE, LABYRINTHSIZE];
+        private int piecePositionRow = PIECEPOSITION;
+        private int piecePositionCol = PIECEPOSITION;
 
         public LabyrinthBoard()
         {
@@ -22,11 +23,11 @@ namespace EscapeFromLabyrinth
         {
             get
             {
-                return this.piecePositionCol;
+                return piecePositionCol;
             }
             private set
             {
-                this.piecePositionCol = value;
+                piecePositionCol = value;
             }
         }
 
@@ -34,11 +35,11 @@ namespace EscapeFromLabyrinth
         {
             get
             {
-                return this.piecePositionRow;
+                return piecePositionRow;
             }
             private set
             {
-                this.piecePositionRow = value;
+                piecePositionRow = value;
             }
         }
 
@@ -49,11 +50,12 @@ namespace EscapeFromLabyrinth
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    ll[i, j] = random.Next(2);
+                    labyrinth[i, j] = random.Next(2);
                 }
             }
-            ll[piecePositionCol, piecePositionRow] = 0;
-        }//end InitializeLabyrinth method
+
+            labyrinth[piecePositionCol, piecePositionRow] = 0;
+        }
 
         public override string ToString()
         {
@@ -67,10 +69,8 @@ namespace EscapeFromLabyrinth
                     {
                         builder.Append("* ");
                     }
-                    else if (ll[i, j] == 0)
+                    else if (labyrinth[i, j] == 0)
                     {
-
-
                         builder.Append("- ");
                     }
                     else
@@ -82,16 +82,16 @@ namespace EscapeFromLabyrinth
             }
 
             return builder.ToString();
-        }//end ShowLabyrinth method
+        }
 
         public bool IsPossibleCell(int row, int col)
         {
-            if (row >= LabyrinthSize || col >= LabyrinthSize || row < 0 || col < 0)
+            if (row >= LABYRINTHSIZE || col >= LABYRINTHSIZE || row < 0 || col < 0)
             {
                 return false;
             }
 
-            if (ll[row, col] == 0)
+            if (labyrinth[row, col] == 0)
             {
                 return true;
             }
@@ -105,8 +105,8 @@ namespace EscapeFromLabyrinth
         {
             bool isOnEdge = this.PiecePositionRow == 0 ||
                             this.piecePositionCol == 0 ||
-                            this.PiecePositionRow == LabyrinthSize - 1 ||
-                            this.piecePositionCol == LabyrinthSize - 1;
+                            this.PiecePositionRow == LABYRINTHSIZE - 1 ||
+                            this.piecePositionCol == LABYRINTHSIZE - 1;
             return isOnEdge;
         }
 
@@ -122,7 +122,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceRight()
         {
-            if (this.PiecePositionCol == LabyrinthSize - 1 || !this.IsPossibleCell(piecePositionRow, piecePositionCol + 1))
+            if (this.PiecePositionCol == LABYRINTHSIZE - 1 || !this.IsPossibleCell(piecePositionRow, piecePositionCol + 1))
             {
                 throw new InvalidOperationException("The piece cannot move to the right.");
             }
@@ -142,7 +142,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceDown()
         {
-            if (this.PiecePositionRow == LabyrinthSize - 1 || !this.IsPossibleCell(piecePositionRow + 1, piecePositionCol))
+            if (this.PiecePositionRow == LABYRINTHSIZE - 1 || !this.IsPossibleCell(piecePositionRow + 1, piecePositionCol))
             {
                 throw new InvalidOperationException("The piece cannot move down.");
             }

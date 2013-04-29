@@ -5,8 +5,6 @@ using System.Text;
 
 namespace EscapeFromLabyrinth
 {
-	// kakyv prekrasen proleten den - den za bygove i losh kod
-	// chestito na kasmetliyata, popadnal na tazi boza!
     class Program
     {
         public static void Main(string[] args)
