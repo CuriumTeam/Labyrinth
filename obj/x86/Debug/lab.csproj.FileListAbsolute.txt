@@ -13,3 +13,8 @@ C:\Users\garybo\Documents\GitHub\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.pdb
 C:\Users\garybo\Documents\GitHub\Labyrinth\bin\Debug\EscapeFromLabyrinth.exe
 C:\Users\garybo\Documents\GitHub\Labyrinth\bin\Debug\EscapeFromLabyrinth.pdb
 C:\Users\garybo\Documents\GitHub\Labyrinth\obj\x86\Debug\lab.csprojResolveAssemblyReference.cache
+C:\Users\gbonevska\Desktop\Home\OOP\telerik-academy-2012\JS\Labyrinth\bin\Debug\EscapeFromLabyrinth.exe
+C:\Users\gbonevska\Desktop\Home\OOP\telerik-academy-2012\JS\Labyrinth\bin\Debug\EscapeFromLabyrinth.pdb
+C:\Users\gbonevska\Desktop\Home\OOP\telerik-academy-2012\JS\Labyrinth\obj\x86\Debug\lab.csprojResolveAssemblyReference.cache
+C:\Users\gbonevska\Desktop\Home\OOP\telerik-academy-2012\JS\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.exe
+C:\Users\gbonevska\Desktop\Home\OOP\telerik-academy-2012\JS\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.pdb

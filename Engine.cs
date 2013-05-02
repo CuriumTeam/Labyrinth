@@ -10,8 +10,8 @@ namespace EscapeFromLabyrinth
         LabyrinthBoard labyrinth = new LabyrinthBoard();
         private TopScores topScores = new TopScores();
         private bool flagContinue = true;
-        private string enterMove = "\nEnter your move (L=left, R=right, U=up, D=down):";
-        private string welcome = "Welcome to “Labirinth” game. Your goal is to escape. \nUse 'top' to view the top scoreboard, \n'restart' to start a new game \nand 'exit' to quit the game.\n";       
+        private readonly string enterMove = "\nEnter your move (L=left, R=right, U=up, D=down):";
+        private readonly string welcome = "Welcome to “Labirinth” game. Your goal is to escape. \nUse 'top' to view the top scoreboard, \n'restart' to start a new game \nand 'exit' to quit the game.\n";       
  
         public void Start()
         {
@@ -23,9 +23,9 @@ namespace EscapeFromLabyrinth
         public void Restart()
         {
             flagContinue = true;
+            labyrinth = new LabyrinthBoard();
             labyrinth.InitializeLabyrinth();
             Console.WriteLine("\n" + welcome);
-            Console.WriteLine(enterMove);
             Console.Write(labyrinth.ToString());
             Move();
         }
@@ -41,7 +41,7 @@ namespace EscapeFromLabyrinth
 
                 if (input.Length == 1)
                 {
-                    ProcessInputDirection(input, steps); 
+                    ProcessInputDirection(input, ref steps); 
                 }
                 else
                 {
@@ -50,7 +50,7 @@ namespace EscapeFromLabyrinth
             }
         }
 
-        public void ProcessInputDirection(string input, int steps)
+        public void ProcessInputDirection(string input, ref int steps)
         {
             switch (input)
             {
@@ -59,7 +59,7 @@ namespace EscapeFromLabyrinth
                     {
                         labyrinth.MovePieceLeft();
                         steps++;
-                        WalkInLabirinth(steps);
+                        WalkInLabirinth(ref steps);
                     }
                     else
                     {
@@ -71,7 +71,7 @@ namespace EscapeFromLabyrinth
                     {
                         labyrinth.MovePieceRight();
                         steps++;
-                        WalkInLabirinth(steps);
+                        WalkInLabirinth(ref steps);
                     }
                     else
                     {
@@ -83,7 +83,7 @@ namespace EscapeFromLabyrinth
                     {
                         labyrinth.MovePieceUp();
                         steps++;
-                        WalkInLabirinth(steps);
+                        WalkInLabirinth(ref steps);
                     }
                     else
                     {
@@ -96,7 +96,7 @@ namespace EscapeFromLabyrinth
                     {
                         labyrinth.MovePieceDown();
                         steps++;
-                        WalkInLabirinth(steps);
+                        WalkInLabirinth(ref steps);
                     }
                     else
                     {
@@ -109,10 +109,11 @@ namespace EscapeFromLabyrinth
             }
         }
 
-        private void WalkInLabirinth(int steps)
+        private void WalkInLabirinth(ref int steps)
         {   
             if (labyrinth.IsPieceOnEdge())
             {
+                Console.Write(labyrinth.ToString());
                 Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
                 Restart();
             }

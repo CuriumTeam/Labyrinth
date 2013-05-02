@@ -7,12 +7,12 @@ namespace EscapeFromLabyrinth
 {
     class LabyrinthBoard
     {
-        const int LABYRINTHSIZE = 7;
-        const int PIECEPOSITION = 3;
+        const int LABYRINTH_SIZE = 7;
+        const int PIECE_POSITION = 3;
 
-        private int[,] labyrinth = new int[LABYRINTHSIZE, LABYRINTHSIZE];
-        private int piecePositionRow = PIECEPOSITION;
-        private int piecePositionCol = PIECEPOSITION;
+        private int[,] labyrinth = new int[LABYRINTH_SIZE, LABYRINTH_SIZE];
+        private int piecePositionRow = PIECE_POSITION;
+        private int piecePositionCol = PIECE_POSITION;
 
         public LabyrinthBoard()
         {
@@ -23,11 +23,11 @@ namespace EscapeFromLabyrinth
         {
             get
             {
-                return piecePositionCol;
+                return this.piecePositionCol;
             }
             private set
             {
-                piecePositionCol = value;
+                this.piecePositionCol = value;
             }
         }
 
@@ -35,20 +35,22 @@ namespace EscapeFromLabyrinth
         {
             get
             {
-                return piecePositionRow;
+                return this.piecePositionRow;
             }
             private set
             {
-                piecePositionRow = value;
+                this.piecePositionRow = value;
             }
         }
 
         public void InitializeLabyrinth()
         {
             Random random = new Random();
-            for (int i = 0; i < 7; i++)
+            labyrinth = new int[LABYRINTH_SIZE, LABYRINTH_SIZE];
+
+            for (int i = 0; i < LABYRINTH_SIZE; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < LABYRINTH_SIZE; j++)
                 {
                     labyrinth[i, j] = random.Next(2);
                 }
@@ -61,9 +63,9 @@ namespace EscapeFromLabyrinth
         {
             StringBuilder builder = new StringBuilder();
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < LABYRINTH_SIZE; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < LABYRINTH_SIZE; j++)
                 {
                     if (this.PiecePositionRow == i && this.PiecePositionCol == j)
                     {
@@ -86,7 +88,7 @@ namespace EscapeFromLabyrinth
 
         public bool IsPossibleCell(int row, int col)
         {
-            if (row >= LABYRINTHSIZE || col >= LABYRINTHSIZE || row < 0 || col < 0)
+            if (row >= LABYRINTH_SIZE || col >= LABYRINTH_SIZE || row < 0 || col < 0)
             {
                 return false;
             }
@@ -105,8 +107,8 @@ namespace EscapeFromLabyrinth
         {
             bool isOnEdge = this.PiecePositionRow == 0 ||
                             this.piecePositionCol == 0 ||
-                            this.PiecePositionRow == LABYRINTHSIZE - 1 ||
-                            this.piecePositionCol == LABYRINTHSIZE - 1;
+                            this.PiecePositionRow == LABYRINTH_SIZE - 1 ||
+                            this.piecePositionCol == LABYRINTH_SIZE - 1;
             return isOnEdge;
         }
 
@@ -122,7 +124,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceRight()
         {
-            if (this.PiecePositionCol == LABYRINTHSIZE - 1 || !this.IsPossibleCell(piecePositionRow, piecePositionCol + 1))
+            if (this.PiecePositionCol == LABYRINTH_SIZE - 1 || !this.IsPossibleCell(piecePositionRow, piecePositionCol + 1))
             {
                 throw new InvalidOperationException("The piece cannot move to the right.");
             }
@@ -142,7 +144,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceDown()
         {
-            if (this.PiecePositionRow == LABYRINTHSIZE - 1 || !this.IsPossibleCell(piecePositionRow + 1, piecePositionCol))
+            if (this.PiecePositionRow == LABYRINTH_SIZE - 1 || !this.IsPossibleCell(piecePositionRow + 1, piecePositionCol))
             {
                 throw new InvalidOperationException("The piece cannot move down.");
             }
