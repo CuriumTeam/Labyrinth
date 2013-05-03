@@ -16,7 +16,7 @@ namespace EscapeFromLabyrinth
 
         public LabyrinthBoard()
         {
-            InitializeLabyrinth();
+            this.InitializeLabyrinth();
         }
 
         public int PiecePositionCol
@@ -25,6 +25,7 @@ namespace EscapeFromLabyrinth
             {
                 return this.piecePositionCol;
             }
+
             private set
             {
                 this.piecePositionCol = value;
@@ -37,6 +38,7 @@ namespace EscapeFromLabyrinth
             {
                 return this.piecePositionRow;
             }
+
             private set
             {
                 this.piecePositionRow = value;
@@ -46,17 +48,17 @@ namespace EscapeFromLabyrinth
         public void InitializeLabyrinth()
         {
             Random random = new Random();
-            labyrinth = new int[LABYRINTH_SIZE, LABYRINTH_SIZE];
+            this.labyrinth = new int[LABYRINTH_SIZE, LABYRINTH_SIZE];
 
             for (int i = 0; i < LABYRINTH_SIZE; i++)
             {
                 for (int j = 0; j < LABYRINTH_SIZE; j++)
                 {
-                    labyrinth[i, j] = random.Next(2);
+                    this.labyrinth[i, j] = random.Next(2);
                 }
             }
 
-            labyrinth[piecePositionCol, piecePositionRow] = 0;
+            this.labyrinth[this.piecePositionCol, this.piecePositionRow] = 0;
         }
 
         public override string ToString()
@@ -71,7 +73,7 @@ namespace EscapeFromLabyrinth
                     {
                         builder.Append("* ");
                     }
-                    else if (labyrinth[i, j] == 0)
+                    else if (this.labyrinth[i, j] == 0)
                     {
                         builder.Append("- ");
                     }
@@ -80,6 +82,7 @@ namespace EscapeFromLabyrinth
                         builder.Append("X ");
                     }
                 }
+
                 builder.AppendLine();
             }
 
@@ -93,7 +96,7 @@ namespace EscapeFromLabyrinth
                 return false;
             }
 
-            if (labyrinth[row, col] == 0)
+            if (this.labyrinth[row, col] == 0)
             {
                 return true;
             }
@@ -114,7 +117,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceLeft()
         {
-            if(this.PiecePositionCol == 0 || !this.IsPossibleCell(piecePositionRow, piecePositionCol - 1))
+            if (this.PiecePositionCol == 0 || !this.IsPossibleCell(this.piecePositionRow, this.piecePositionCol - 1))
             {
                 throw new InvalidOperationException("The piece cannot move to the left.");
             }
@@ -124,7 +127,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceRight()
         {
-            if (this.PiecePositionCol == LABYRINTH_SIZE - 1 || !this.IsPossibleCell(piecePositionRow, piecePositionCol + 1))
+            if (this.PiecePositionCol == LABYRINTH_SIZE - 1 || !this.IsPossibleCell(this.piecePositionRow, this.piecePositionCol + 1))
             {
                 throw new InvalidOperationException("The piece cannot move to the right.");
             }
@@ -134,7 +137,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceUp()
         {
-            if (this.PiecePositionRow == 0 || !this.IsPossibleCell(piecePositionRow - 1, piecePositionCol))
+            if (this.PiecePositionRow == 0 || !this.IsPossibleCell(this.piecePositionRow - 1, this.piecePositionCol))
             {
                 throw new InvalidOperationException("The piece cannot move up.");
             }
@@ -144,7 +147,7 @@ namespace EscapeFromLabyrinth
 
         public void MovePieceDown()
         {
-            if (this.PiecePositionRow == LABYRINTH_SIZE - 1 || !this.IsPossibleCell(piecePositionRow + 1, piecePositionCol))
+            if (this.PiecePositionRow == LABYRINTH_SIZE - 1 || !this.IsPossibleCell(this.piecePositionRow + 1, this.piecePositionCol))
             {
                 throw new InvalidOperationException("The piece cannot move down.");
             }

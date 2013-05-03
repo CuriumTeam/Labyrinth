@@ -15,37 +15,37 @@ namespace EscapeFromLabyrinth
  
         public void Start()
         {
-            Console.WriteLine(welcome);
-            Console.Write(labyrinth.ToString());
-            Move();
+            Console.WriteLine(this.welcome);
+            Console.Write(this.labyrinth.ToString());
+            this.Move();
         }
 
         public void Restart()
         {
-            flagContinue = true;
-            labyrinth = new LabyrinthBoard();
-            labyrinth.InitializeLabyrinth();
-            Console.WriteLine("\n" + welcome);
-            Console.Write(labyrinth.ToString());
-            Move();
+            this.flagContinue = true;
+            this.labyrinth = new LabyrinthBoard();
+            this.labyrinth.InitializeLabyrinth();
+            Console.WriteLine("\n" + this.welcome);
+            Console.Write(this.labyrinth.ToString());
+            this.Move();
         }
        
         public void Move()
         {
             int steps = 0;
 
-            while (flagContinue == true)
+            while (this.flagContinue == true)
             {
                 Console.Write(enterMove);
                 string input = Console.ReadLine();
 
                 if (input.Length == 1)
                 {
-                    ProcessInputDirection(input, ref steps); 
+                    this.ProcessInputDirection(input, ref steps); 
                 }
                 else
                 {
-                    ProcessInputCommand(input);
+                    this.ProcessInputCommand(input);
                 }
             }
         }
@@ -55,35 +55,37 @@ namespace EscapeFromLabyrinth
             switch (input)
             {
                 case "L":
-                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow, labyrinth.PiecePositionCol - 1))
+                    if (this.labyrinth.IsPossibleCell(this.labyrinth.PiecePositionRow, this.labyrinth.PiecePositionCol - 1))
                     {
-                        labyrinth.MovePieceLeft();
+                        this.labyrinth.MovePieceLeft();
                         steps++;
-                        WalkInLabirinth(ref steps);
+                        this.WalkInLabirinth(ref steps);
                     }
                     else
                     {
                         Console.WriteLine("It is not possible to move left!");
                     }
+
                     break;
                 case "R":
-                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow, labyrinth.PiecePositionCol + 1))
+                    if (this.labyrinth.IsPossibleCell(this.labyrinth.PiecePositionRow, this.labyrinth.PiecePositionCol + 1))
                     {
-                        labyrinth.MovePieceRight();
+                        this.labyrinth.MovePieceRight();
                         steps++;
-                        WalkInLabirinth(ref steps);
+                        this.WalkInLabirinth(ref steps);
                     }
                     else
                     {
                         Console.WriteLine("It is not possible to move right!");
                     }
+
                     break;
                 case "U":
-                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow - 1, labyrinth.PiecePositionCol))
+                    if (this.labyrinth.IsPossibleCell(this.labyrinth.PiecePositionRow - 1, this.labyrinth.PiecePositionCol))
                     {
-                        labyrinth.MovePieceUp();
+                        this.labyrinth.MovePieceUp();
                         steps++;
-                        WalkInLabirinth(ref steps);
+                        this.WalkInLabirinth(ref steps);
                     }
                     else
                     {
@@ -92,16 +94,17 @@ namespace EscapeFromLabyrinth
 
                     break;
                 case "D":
-                    if (labyrinth.IsPossibleCell(labyrinth.PiecePositionRow + 1, labyrinth.PiecePositionCol))
+                    if (this.labyrinth.IsPossibleCell(this.labyrinth.PiecePositionRow + 1, this.labyrinth.PiecePositionCol))
                     {
-                        labyrinth.MovePieceDown();
+                        this.labyrinth.MovePieceDown();
                         steps++;
-                        WalkInLabirinth(ref steps);
+                        this.WalkInLabirinth(ref steps);
                     }
                     else
                     {
                         Console.WriteLine("It is not possible to move down!");
                     }
+
                     break;
                 default:
                     Console.WriteLine("Invalid command to move");
@@ -110,16 +113,16 @@ namespace EscapeFromLabyrinth
         }
 
         private void WalkInLabirinth(ref int steps)
-        {   
-            if (labyrinth.IsPieceOnEdge())
+        {
+            if (this.labyrinth.IsPieceOnEdge())
             {
-                Console.Write(labyrinth.ToString());
+                Console.Write(this.labyrinth.ToString());
                 Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
-                Restart();
+                this.Restart();
             }
             else
             {
-                Console.Write(labyrinth.ToString());
+                Console.Write(this.labyrinth.ToString());
             }
         }
 
@@ -129,22 +132,20 @@ namespace EscapeFromLabyrinth
             {
                 case "exit":
                     Console.WriteLine("Good Bye!");
-                    flagContinue = false;
+                    this.flagContinue = false;
                     break;
                 case "restart":
-                    Restart();
+                    this.Restart();
                     break;
                 case "top":
-                    topScores.ShowTopScores();
-                    flagContinue = true;
+                    this.topScores.ShowTopScores();
+                    this.flagContinue = true;
                     break;
                 default:
                     Console.WriteLine("Invalid command");
-                    flagContinue = true;
+                    this.flagContinue = true;
                     break;
             }
         }
     }
 }
-
-
