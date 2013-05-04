@@ -118,6 +118,12 @@ namespace EscapeFromLabyrinth
             {
                 Console.Write(this.labyrinth.ToString());
                 Console.WriteLine("Congratulations! You escaped in {0} moves.", steps);
+                if (topScores.CheckIdScoreIsHighEnough(steps))
+                {
+                    Console.Write("Please, enter your name: ");
+                    string name = Console.ReadLine();
+                    topScores.EnterTopScore(name, steps);
+                }
                 this.Restart();
             }
             else
