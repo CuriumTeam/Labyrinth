@@ -5,18 +5,30 @@ using System.Text;
 
 namespace EscapeFromLabyrinth
 {
-    class LabyrinthBoard
+    public class LabyrinthBoard
     {
-        const int LABYRINTH_SIZE = 7;
-        const int PIECE_POSITION = 3;
+        public const int LABYRINTH_SIZE = 7;
+        public const int PIECE_INITIAL_POSITION = 3;
 
         private int[,] labyrinth = new int[LABYRINTH_SIZE, LABYRINTH_SIZE];
-        private int piecePositionRow = PIECE_POSITION;
-        private int piecePositionCol = PIECE_POSITION;
+        private int piecePositionRow = PIECE_INITIAL_POSITION;
+        private int piecePositionCol = PIECE_INITIAL_POSITION;
 
         public LabyrinthBoard()
         {
             this.InitializeLabyrinth();
+        }
+
+        protected int[,] Labyrinth
+        {
+            get
+            {
+                return this.labyrinth;
+            }
+            set
+            {
+                this.labyrinth = value;
+            }
         }
 
         public int PiecePositionCol
@@ -26,7 +38,7 @@ namespace EscapeFromLabyrinth
                 return this.piecePositionCol;
             }
 
-            private set
+            protected set
             {
                 this.piecePositionCol = value;
             }
@@ -39,7 +51,7 @@ namespace EscapeFromLabyrinth
                 return this.piecePositionRow;
             }
 
-            private set
+            protected set
             {
                 this.piecePositionRow = value;
             }
