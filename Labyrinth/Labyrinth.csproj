@@ -48,6 +48,7 @@
     <Compile Include="LabyrinthBoard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TopScores.cs" />
+    <Compile Include="UserInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -12,3 +12,10 @@ C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality co
 C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\obj\Debug\LabyrinthTest.csprojResolveAssemblyReference.cache
 C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\obj\Debug\LabyrinthTest.dll
 C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\obj\Debug\LabyrinthTest.pdb
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\bin\Debug\LabyrinthTest.dll
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\bin\Debug\LabyrinthTest.pdb
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\bin\Debug\EscapeFromLabyrinth.exe
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\bin\Debug\EscapeFromLabyrinth.pdb
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\obj\Debug\LabyrinthTest.csprojResolveAssemblyReference.cache
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\obj\Debug\LabyrinthTest.dll
+C:\Users\bigbite\Desktop\Labyrinth\LabyrinthTest\obj\Debug\LabyrinthTest.pdb

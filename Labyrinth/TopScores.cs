@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EscapeFromLabyrinth
 {
-    class TopScores
+    public class TopScores
     {
         const int NumberOfTopScores = 5;
         private List<KeyValuePair<string, int>> topScores = new List<KeyValuePair<string, int>>(NumberOfTopScores);

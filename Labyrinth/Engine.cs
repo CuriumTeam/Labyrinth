@@ -5,14 +5,83 @@ using System.Text;
 
 namespace EscapeFromLabyrinth
 {
+ 
     public class Engine
     {
         LabyrinthBoard labyrinth = new LabyrinthBoard();
         private TopScores topScores = new TopScores();
         private bool flagContinue = true;
         private readonly string enterMove = "\nEnter your move (L=left, R=right, U=up, D=down):";
-        private readonly string welcome = "Welcome to “Labirinth” game. Your goal is to escape. \nUse 'top' to view the top scoreboard, \n'restart' to start a new game \nand 'exit' to quit the game.\n";       
- 
+        private readonly string welcome = "Welcome to “Labirinth” game. Your goal is to escape. \nUse 'top' to view the top scoreboard, \n'restart' to start a new game \nand 'exit' to quit the game.\n";
+        private UserInput userInterface = new UserInput();
+
+        public LabyrinthBoard Labyrinth
+        {
+            get { return labyrinth; }
+
+            set
+            {
+                if (value != null)
+                {
+                    labyrinth = value;
+                }
+                else
+                {
+                    throw new ArgumentNullException("The labyrinth board is not initialized!");
+                }
+            }
+        }
+       
+        public TopScores TopScores
+        {
+            get { return topScores; }
+
+            set
+            {
+                if (value != null)
+                {
+                    topScores = value;
+                }
+                else
+                {
+                    throw new ArgumentNullException("The top scores are not initialized!");
+                }
+            }
+        }
+
+        public UserInput UserInterface
+        {
+            get { return userInterface; }
+
+            set
+            {
+                if (value != null)
+                {
+                    userInterface = value;
+                }
+                else
+                {
+                    throw new ArgumentNullException("The user interface is not initialized!");
+                }
+            }
+        }
+
+        public Engine(LabyrinthBoard labyrinthBoard, TopScores scores, UserInput userInterface)
+        {
+            this.Labyrinth = labyrinthBoard;
+            this.TopScores = scores;
+            this.UserInterface = userInterface;
+        }
+
+        public Engine()
+        {
+            labyrinth = new LabyrinthBoard();
+            topScores = new TopScores();
+            flagContinue = true;
+            enterMove = "\nEnter your move (L=left, R=right, U=up, D=down):";
+            welcome = "Welcome to “Labirinth” game. Your goal is to escape. \nUse 'top' to view the top scoreboard, \n'restart' to start a new game \nand 'exit' to quit the game.\n";       
+        }
+
         public void Start()
         {
             Console.WriteLine(this.welcome);
@@ -29,7 +98,7 @@ namespace EscapeFromLabyrinth
             Console.Write(this.labyrinth.ToString());
             this.Move();
         }
-       
+
         public void Move()
         {
             int steps = 0;
@@ -37,7 +106,7 @@ namespace EscapeFromLabyrinth
             while (this.flagContinue == true)
             {
                 Console.Write(enterMove);
-                string input = Console.ReadLine();
+                string input = userInterface.GetInput();
 
                 if (input.Length == 1)
                 {
@@ -121,7 +190,7 @@ namespace EscapeFromLabyrinth
                 if (topScores.CheckIdScoreIsHighEnough(steps))
                 {
                     Console.Write("Please, enter your name: ");
-                    string name = Console.ReadLine();
+                    string name = userInterface.GetInput();
                     topScores.EnterTopScore(name, steps);
                 }
                 this.Restart();

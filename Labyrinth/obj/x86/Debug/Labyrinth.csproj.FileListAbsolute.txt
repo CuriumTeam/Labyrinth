@@ -3,3 +3,8 @@ C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality co
 C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\Labyrinth\obj\x86\Debug\Labyrinth.csprojResolveAssemblyReference.cache
 C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.exe
 C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.pdb
+C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.exe
+C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.pdb
+C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\bin\Debug\EscapeFromLabyrinth.exe
+C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\bin\Debug\EscapeFromLabyrinth.pdb
+C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\obj\x86\Debug\Labyrinth.csprojResolveAssemblyReference.cache

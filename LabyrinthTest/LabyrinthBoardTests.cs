@@ -7,7 +7,7 @@ namespace LabyrinthTest
     [TestClass]
     public class LabyrinthBoardTests
     {
-        static LabyrinthBoard testBoard;
+        static LabyrinthBoard testBoard = new LabyrinthBoard();
 
         [TestMethod]
         public void TestConstructorForExceptions()
