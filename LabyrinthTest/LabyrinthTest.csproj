@@ -50,12 +50,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="EngineTests.cs" />
-    <Compile Include="LabyrinthBoardTests.cs" />
-    <Compile Include="MockingUserInterface.cs" />
-    <Compile Include="MockLabyrinthBoard.cs" />
+    <Compile Include="EngineTests.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="LabyrinthBoardTests.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="MockingUserInterface.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="MockLabyrinthBoard.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TopScoresTests.cs" />
+    <Compile Include="TopScoresTests.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Labyrinth\Labyrinth.csproj">
