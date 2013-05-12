@@ -1,0 +1,14 @@
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\obj\Debug\LabyrinthTest.csprojResolveAssemblyReference.cache
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\bin\Debug\LabyrinthTest.dll
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\bin\Debug\LabyrinthTest.pdb
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\bin\Debug\EscapeFromLabyrinth.exe
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\bin\Debug\EscapeFromLabyrinth.pdb
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\obj\Debug\LabyrinthTest.dll
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\LabyrinthTest\obj\Debug\LabyrinthTest.pdb
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\bin\Debug\LabyrinthTest.dll
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\bin\Debug\LabyrinthTest.pdb
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\bin\Debug\EscapeFromLabyrinth.exe
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\bin\Debug\EscapeFromLabyrinth.pdb
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\obj\Debug\LabyrinthTest.csprojResolveAssemblyReference.cache
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\obj\Debug\LabyrinthTest.dll
+C:\Users\Anna\Projects\Telerik Academy\CSharp\Materials and Homeworks\Quality code\Group Project\Labyrinth-6\LabyrinthTest\obj\Debug\LabyrinthTest.pdb

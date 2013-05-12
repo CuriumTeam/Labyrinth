@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab", "lab.csproj", "{C04B2C57-4488-468B-B7C4-C816FAA216E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labyrinth", "Labyrinth\Labyrinth.csproj", "{C04B2C57-4488-468B-B7C4-C816FAA216E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabyrinthTest", "..\LabyrinthTest\LabyrinthTest.csproj", "{38083752-9AAB-4DA5-8938-2BE34274217E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabyrinthTest", "LabyrinthTest\LabyrinthTest.csproj", "{38083752-9AAB-4DA5-8938-2BE34274217E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
