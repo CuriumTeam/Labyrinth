@@ -66,6 +66,7 @@
     <Compile Include="TopScoresTests.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="UserInputTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Labyrinth\Labyrinth.csproj">

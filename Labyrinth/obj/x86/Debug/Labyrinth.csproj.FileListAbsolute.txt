@@ -8,3 +8,11 @@ C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.p
 C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\bin\Debug\EscapeFromLabyrinth.exe
 C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\bin\Debug\EscapeFromLabyrinth.pdb
 C:\Users\bigbite\Desktop\Labyrinth\Labyrinth\obj\x86\Debug\Labyrinth.csprojResolveAssemblyReference.cache
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\bin\Debug\Engine.cs
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\bin\Debug\LabyrinthBoard.cs
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\bin\Debug\TopScores.cs
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\bin\Debug\UserInput.cs
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\bin\Debug\EscapeFromLabyrinth.exe
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\bin\Debug\EscapeFromLabyrinth.pdb
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.exe
+C:\Users\bigbite\Desktop\Labyrinth2\Labyrinth\obj\x86\Debug\EscapeFromLabyrinth.pdb
